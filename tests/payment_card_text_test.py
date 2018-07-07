@@ -1,3 +1,5 @@
+# pyre-strict
+
 import unittest
 
 from tests.examples import TEXTS
@@ -5,7 +7,7 @@ from payment_card_text import PaymentCardText
 
 
 class PaymentCardTextTest(unittest.TestCase):
-    def test_clean(self):
+    def test_clean(self) -> None:
         for example_text in TEXTS:
             text = PaymentCardText(example_text['input'])
 

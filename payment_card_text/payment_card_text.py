@@ -1,19 +1,23 @@
+# pyre-strict
+
 from pprint import pprint
 from re import sub, compile
+from typing import List, Any
+
 import iso4217parse
 
 
 class PaymentCardText:
     text: str = ''
 
-    def __init__(self, text: str):
+    def __init__(self, text: str) -> None:
         self.text = text
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.text
 
-    def clean(self):
-        parts: list = self.text.split()
+    def clean(self) -> None:
+        parts: List[str] = self.text.split()
 
         # pprint(parts)
 
@@ -23,14 +27,14 @@ class PaymentCardText:
             if pattern.match(parts[0]):
                 del parts[0]
         except IndexError:
-            return self.text
+            return
 
         pattern = compile('\d{2}\.\d{2}')
 
         if pattern.match(parts[0]):
             del parts[0]
 
-        currency = iso4217parse.by_alpha3(parts[0])
+        currency: Any = iso4217parse.by_alpha3(parts[0])
 
         if isinstance(currency, iso4217parse.Currency):
             del parts[0]
@@ -57,7 +61,7 @@ class PaymentCardText:
         if pattern.match(parts[-1]):
             del parts[-1]
 
-            currency = iso4217parse.by_alpha3(parts[-1])
+            currency: Any = iso4217parse.by_alpha3(parts[-1])
             if isinstance(currency, iso4217parse.Currency):
                 del parts[-1]
 

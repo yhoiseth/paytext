@@ -1,4 +1,7 @@
-TEXTS = [
+# pyre-strict
+from typing import List, Dict
+
+TEXTS: List[Dict[str, str]] = [
     {
         'input': '',
         'expected_output': '',
