@@ -1,5 +1,7 @@
 # payment-card-text
 
+[![Build Status](https://travis-ci.org/yhoiseth/payment-card-text.svg?branch=master)](https://travis-ci.org/yhoiseth/payment-card-text)
+
 Python package to clean texts from payment card transactions.
 
 As an example, consider the following texts.
