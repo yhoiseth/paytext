@@ -15,3 +15,8 @@ build:
                         command: pylint-run
                         use_website_config: true
         tests: true
+filter:
+    excluded_paths:
+        - '*/test/*'
+    dependency_paths:
+        - 'lib/*'
