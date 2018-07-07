@@ -10,7 +10,7 @@ python:
   - '3.7'
 
 script:
-  - pyre
+  - cp pyre-check.sh.dist pyre-check.sh && ./pyre-check.sh
   - python -m unittest discover -s tests -p '*_test.py'
 
 sudo: true

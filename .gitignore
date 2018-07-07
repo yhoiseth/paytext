@@ -105,3 +105,4 @@ venv.bak/
 
 # Pyre
 .pyre/pyre.stderr
+pyre-check.sh
