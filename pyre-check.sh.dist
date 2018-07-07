@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pyre --search-path /Users/yngve/.local/share/virtualenvs/payment-card-text-ldBVJZyb/lib/python3.7/site-packages/ check
+pyre --search-path /home/travis/virtualenv/python3.7.0/lib/python3.7/site-packages/ check
