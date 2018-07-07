@@ -6,7 +6,7 @@ import os
 
 class PyreStrictTest(unittest.TestCase):
     def test_strict_mode_all_python_files(self) -> None:
-        for directory, directories, files in os.walk('.'):
+        for directory, _directories, files in os.walk('.'):
             for file in files:
                 if not file.endswith('.py'):
                     continue
