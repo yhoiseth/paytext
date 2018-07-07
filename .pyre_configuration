@@ -1,8 +1,5 @@
 {
-  "binary": "/Users/yngve/.local/share/virtualenvs/payment-card-text-ldBVJZyb/bin/pyre.bin",
   "source_directories": [
     "."
-  ],
-  "search_path": "/Users/yngve/.local/share/virtualenvs/payment-card-text-ldBVJZyb/lib/python3.7/site-packages/",
-  "typeshed": "/Users/yngve/.local/share/virtualenvs/payment-card-text-ldBVJZyb/lib/pyre_check/typeshed/"
+  ]
 }
