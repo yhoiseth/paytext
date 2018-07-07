@@ -18,4 +18,4 @@ I've mostly had strings from transactions with Norwegian merchants and banks to 
 
 ## Running tests
 
-`python -m unittest discover -s tests -p '*_test.py'`
+`nosetests`
