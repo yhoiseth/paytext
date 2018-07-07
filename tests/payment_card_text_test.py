@@ -1,3 +1,5 @@
+# pyre-strict
+
 import unittest
 
 from tests.examples import TEXTS

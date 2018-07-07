@@ -1,3 +1,5 @@
+# pyre-strict
+
 from pprint import pprint
 from re import sub, compile
 import iso4217parse
