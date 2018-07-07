@@ -12,6 +12,7 @@ python:
 script:
   - cp pyre-check.sh.dist pyre-check.sh && ./pyre-check.sh
   - python -m unittest discover -s tests -p '*_test.py'
+  - nosetests --with-coverage --cover-package payment_card_text --cover-min-percentage=100 --cover-erase
   - codecov
 
 sudo: true

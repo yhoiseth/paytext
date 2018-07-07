@@ -9,6 +9,7 @@ name = "pypi"
 [dev-packages]
 pyre-check = "*"
 codecov = "*"
+nose = "*"
 
 [requires]
 python_version = "3.7"

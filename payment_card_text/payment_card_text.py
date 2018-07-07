@@ -10,6 +10,11 @@ import iso4217parse
 class PaymentCardText:
     text: str = ''
 
+    def add(self, a, b):
+        self.text = a
+
+        return a + b
+
     def __init__(self, text: str) -> None:
         self.text = text
 
