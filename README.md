@@ -1,7 +1,8 @@
 # payment-card-text
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cef3ee7d86c4402993b484e4de7867a5)](https://app.codacy.com/app/yhoiseth/payment-card-text?utm_source=github.com&utm_medium=referral&utm_content=yhoiseth/payment-card-text&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/yhoiseth/payment-card-text.svg?branch=master)](https://travis-ci.org/yhoiseth/payment-card-text)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cef3ee7d86c4402993b484e4de7867a5)](https://app.codacy.com/app/yhoiseth/payment-card-text?utm_source=github.com&utm_medium=referral&utm_content=yhoiseth/payment-card-text&utm_campaign=badger)
+[![codecov](https://codecov.io/gh/yhoiseth/payment-card-text/branch/master/graph/badge.svg)](https://codecov.io/gh/yhoiseth/payment-card-text)
 
 Python package to clean texts from payment card transactions.
 
