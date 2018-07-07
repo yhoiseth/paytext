@@ -12,5 +12,6 @@ python:
 script:
   - cp pyre-check.sh.dist pyre-check.sh && ./pyre-check.sh
   - python -m unittest discover -s tests -p '*_test.py'
+  - codecov
 
 sudo: true
