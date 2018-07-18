@@ -6,7 +6,7 @@ from tests.examples import TEXTS
 from paytext import PaymentText
 
 
-class PaymentCardTextTest(unittest.TestCase):
+class PaymentTextTest(unittest.TestCase):
     def test_clean(self) -> None:
         for example_text in TEXTS:
             text = PaymentText(example_text['input'])
