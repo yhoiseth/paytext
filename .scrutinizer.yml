@@ -21,4 +21,5 @@ build:
           - pipenv install --dev
       tests:
         override:
-          - pipenv run nosetests
+          - pipenv run nosetests --with-coverage --cover-package paytext --cover-min-percentage=100 --cover-erase
+          - cp pyre-check.sh.dist pyre-check.sh && ./pyre-check.sh

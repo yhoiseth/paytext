@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-pyre --search-path /home/travis/virtualenv/python3.7.0/lib/python3.7/site-packages/ check
+# pyre --search-path /home/travis/virtualenv/python3.7.0/lib/python3.7/site-packages/ check
+pyre --search-path ./lib/python3.6/site-packages/ check
