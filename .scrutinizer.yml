@@ -16,8 +16,9 @@ build:
           - py-scrutinizer-run
     tests:
       project_setup:
-        - pip install pipenv
-        - pipenv install --dev
+        override:
+          - pip install pipenv
+          - pipenv install --dev
       tests:
         override:
           - pipenv run nosetests
