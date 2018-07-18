@@ -14,11 +14,10 @@ build:
             command: pylint-run
             use_website_config: true
           - py-scrutinizer-run
-    test:
+    tests:
       tests:
         project_setup:
           - pip install pipenv
           - pipenv install --dev
-          - pipenv shell
         override:
-          - nosetests
+          - pipenv run nosetests
