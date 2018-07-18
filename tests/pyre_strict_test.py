@@ -13,6 +13,9 @@ class PyreStrictTest(unittest.TestCase):
 
                 path = os.path.join(directory, file)
 
+                if './lib/' in path:
+                    continue
+
                 with open(path) as f:
                     first_line: str = f.readline()
 
