@@ -15,9 +15,9 @@ build:
             use_website_config: true
           - py-scrutinizer-run
     tests:
+      project_setup:
+        - pip install pipenv
+        - pipenv install --dev
       tests:
-        project_setup:
-          - pip install pipenv
-          - pipenv install --dev
         override:
           - pipenv run nosetests
