@@ -16,5 +16,10 @@ build:
           - py-scrutinizer-run
     test:
       tests:
+        dependencies:
+          before:
+            - pip install pipenv
+            - pipenv install --dev
+            - pipenv shell
         override:
           - nosetests
