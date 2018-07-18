@@ -7,7 +7,7 @@ from typing import List, Any
 import iso4217parse
 
 
-class PaymentCardText:
+class PaymentText:
     text: str = ''
 
     def __init__(self, text: str) -> None:

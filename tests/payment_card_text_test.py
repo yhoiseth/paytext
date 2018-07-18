@@ -3,13 +3,13 @@
 import unittest
 
 from tests.examples import TEXTS
-from payment_card_text import PaymentCardText
+from paytext import PaymentText
 
 
 class PaymentCardTextTest(unittest.TestCase):
     def test_clean(self) -> None:
         for example_text in TEXTS:
-            text = PaymentCardText(example_text['input'])
+            text = PaymentText(example_text['input'])
 
             text.clean()
 

@@ -11,7 +11,7 @@ python:
 
 script:
   - cp pyre-check.sh.dist pyre-check.sh && ./pyre-check.sh
-  - nosetests --with-coverage --cover-package payment_card_text --cover-min-percentage=100 --cover-erase
+  - nosetests --with-coverage --cover-package paytext --cover-min-percentage=100 --cover-erase
   - codecov
 
 sudo: true
