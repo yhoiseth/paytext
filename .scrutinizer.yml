@@ -1,22 +1,18 @@
 checks:
-    python:
-        code_rating: true
-        duplicate_code: true
+  python:
+    classes_valid_slots: true
+    code_rating: true
+    duplicate_code: true
 build:
-    nodes:
-        analysis:
-            project_setup:
-                override:
-                    - 'true'
-            tests:
-                override:
-                    - py-scrutinizer-run
-                    -
-                        command: pylint-run
-                        use_website_config: true
-        tests: true
-filter:
-    excluded_paths:
-        - '*/test/*'
-    dependency_paths:
-        - 'lib/*'
+nodes:
+  analysis:
+    tests:
+      override:
+        -
+          command: pylint-run
+          use_website_config: true
+        - py-scrutinizer-run
+  test:
+    tests:
+      override:
+        - nosetests
