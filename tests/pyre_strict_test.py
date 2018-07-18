@@ -16,6 +16,9 @@ class PyreStrictTest(unittest.TestCase):
                 if './lib/' in path:
                     continue
 
+                if './bin/activate_this.py' in path:
+                    continue
+
                 with open(path) as f:
                     first_line: str = f.readline()
 
