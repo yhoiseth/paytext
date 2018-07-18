@@ -4,15 +4,15 @@ checks:
     code_rating: true
     duplicate_code: true
 build:
-nodes:
-  analysis:
-    tests:
-      override:
-        -
-          command: pylint-run
-          use_website_config: true
-        - py-scrutinizer-run
-  test:
-    tests:
-      override:
-        - nosetests
+  nodes:
+    analysis:
+      tests:
+        override:
+          -
+            command: pylint-run
+            use_website_config: true
+          - py-scrutinizer-run
+    test:
+      tests:
+        override:
+          - nosetests
