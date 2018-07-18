@@ -16,7 +16,7 @@ build:
           - py-scrutinizer-run
     test:
       tests:
-        before:
+        project_setup:
           - pip install pipenv
           - pipenv install --dev
           - pipenv shell
