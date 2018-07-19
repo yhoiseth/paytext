@@ -14,7 +14,7 @@ class PyreStrictTest(unittest.TestCase):
     """
     Check that all relevant Python files have Pyre set to strict mode.
     """
-    def test_strict_mode_all_python_files(self) -> None:
+    def test_strict_all_python_files(self) -> None:
         """
         Check that all relevant Python files have Pyre set to strict mode.
         """
