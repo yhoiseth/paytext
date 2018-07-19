@@ -11,7 +11,13 @@ import os
 
 
 class PyreStrictTest(unittest.TestCase):
+    """
+    Check that all relevant Python files have Pyre set to strict mode.
+    """
     def test_strict_mode_all_python_files(self) -> None:
+        """
+        Check that all relevant Python files have Pyre set to strict mode.
+        """
         for directory, _directories, files in os.walk('.'):
             for file in files:
                 if not file.endswith('.py'):
@@ -27,8 +33,8 @@ class PyreStrictTest(unittest.TestCase):
                     # Prevent false positive in Scrutinizer.
                     continue
 
-                with open(path) as f:
-                    first_line: str = f.readline()
+                with open(path) as current_file:
+                    first_line: str = current_file.readline()
 
                     self.assertEqual(
                         first_line,
