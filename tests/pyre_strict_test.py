@@ -14,23 +14,16 @@ class PyreStrictTest(unittest.TestCase):
     """
     Check that all relevant Python files have Pyre set to strict mode.
     """
+
     def test_strict_all_python_files(self) -> None:
         """
         Check that all relevant Python files have Pyre set to strict mode.
         """
         for directory, _directories, files in os.walk('.'):
             for file in files:
-                if not file.endswith('.py'):
-                    continue
-
                 path = os.path.join(directory, file)
 
-                if './lib/' in path:
-                    # Prevent false positive in Scrutinizer.
-                    continue
-
-                if './bin/activate_this.py' in path:
-                    # Prevent false positive in Scrutinizer.
+                if self.path_can_safely_be_skipped(path):
                     continue
 
                 with open(path) as current_file:
@@ -41,3 +34,25 @@ class PyreStrictTest(unittest.TestCase):
                         '# pyre-strict\n',
                         path + ' is not set to Pyre strict mode.',
                     )
+
+    @staticmethod
+    def path_can_safely_be_skipped(path: str) -> bool:
+        """
+        Make sure that we only check Python files that are in the present
+        codebase.
+
+        :param path:
+        :return:
+        """
+        if not path.endswith('.py'):
+            return True
+
+        if './lib/' in path:
+            # Prevent false positive in Scrutinizer.
+            return True
+
+        if './bin/activate_this.py' in path:
+            # Prevent false positive in Scrutinizer.
+            return True
+
+        return False
