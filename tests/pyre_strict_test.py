@@ -1,5 +1,11 @@
 # pyre-strict
 
+"""
+We use Pyre Check to prevent type errors. However, for Pyre Check to fail if
+type declarations aren't "perfect", all files need to start with a "pyre-strict"
+comment. This test checks that all Python files start with such a comment.
+"""
+
 import unittest
 import os
 
@@ -14,9 +20,11 @@ class PyreStrictTest(unittest.TestCase):
                 path = os.path.join(directory, file)
 
                 if './lib/' in path:
+                    # Prevent false positive in Scrutinizer.
                     continue
 
                 if './bin/activate_this.py' in path:
+                    # Prevent false positive in Scrutinizer.
                     continue
 
                 with open(path) as f:
