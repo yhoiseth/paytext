@@ -1,8 +1,3 @@
-checks:
-  python:
-    classes_valid_slots: true
-    code_rating: true
-    duplicate_code: true
 build:
   environment:
     python: 3.6
@@ -23,3 +18,11 @@ build:
         override:
           - pipenv run nosetests --with-coverage --cover-package paytext --cover-min-percentage=100 --cover-erase
           - cp pyre-check.sh.dist pyre-check.sh && ./pyre-check.sh
+build_failure_conditions:
+  - 'issues.exists'
+  - 'elements.rating(< A).exists'
+checks:
+  python:
+    classes_valid_slots: true
+    code_rating: true
+    duplicate_code: true
