@@ -1,5 +1,9 @@
 # pyre-strict
 
+"""
+This module helps you work with payment texts such as
+"*4321 29.06 USD 50.00 ITUNES.COM/BILL Rate: 1.0000".
+"""
 from re import compile as compile_regex
 from typing import List, Any
 
@@ -7,6 +11,9 @@ import iso4217parse
 
 
 class PaymentText:
+    """
+    Use this class to represent your payment text.
+    """
     text: str = ''
 
     def __init__(self, text: str) -> None:
@@ -15,7 +22,14 @@ class PaymentText:
     def __repr__(self) -> str:
         return self.text
 
-    def clean(self) -> None:
+    def generalize(self) -> None:
+        """
+        Remove all parts of the strings that are specific to just this payment,
+        in order to have a string that is the same across different payments of
+        the same type (e.g. a monthly payment to Apple for iCloud storage).
+
+        :return:
+        """
         parts: List[str] = self.text.split()
 
         pattern = compile_regex(r'\*\d{4}')

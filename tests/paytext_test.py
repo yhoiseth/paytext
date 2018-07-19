@@ -88,16 +88,16 @@ class PaymentTextTest(unittest.TestCase):
     """
     This is the test class for the PaymentText class.
     """
-    def test_clean(self) -> None:
+    def test_generalize(self) -> None:
         """
-        Test that PaymentText.clean() properly cleans a payment text.
+        Test that PaymentText.generalize() properly cleans a payment text.
 
         :return:
         """
         for example_text in EXAMPLE_TEXTS:
             text = PaymentText(example_text['input'])
 
-            text.clean()
+            text.generalize()
 
             self.assertEqual(
                 str(text),
