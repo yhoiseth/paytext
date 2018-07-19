@@ -1,5 +1,9 @@
 # pyre-strict
 
+"""
+This is the main test file for the paytext module.
+"""
+
 import unittest
 from typing import List, Dict
 from paytext import PaymentText
@@ -81,7 +85,15 @@ EXAMPLE_TEXTS: List[Dict[str, str]] = [
 
 
 class PaymentTextTest(unittest.TestCase):
+    """
+    This is the test class for the PaymentText class.
+    """
     def test_clean(self) -> None:
+        """
+        Test that PaymentText.clean() properly cleans a payment text.
+
+        :return:
+        """
         for example_text in EXAMPLE_TEXTS:
             text = PaymentText(example_text['input'])
 
