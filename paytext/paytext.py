@@ -14,13 +14,13 @@ class PaymentText:
     """
     Use this class to represent your payment text.
     """
-    text: str = ''
+    parts: List[str] = []
 
     def __init__(self, text: str) -> None:
-        self.text = text
+        self.parts = text.split()
 
     def __repr__(self) -> str:
-        return self.text
+        return ' '.join(self.parts)
 
     def generalize(self) -> None:
         """
@@ -30,52 +30,73 @@ class PaymentText:
 
         :return:
         """
-        parts: List[str] = self.text.split()
+        self._clean_leading_card_number()
+        self._clean_leading_date()
+        self._clean_leading_amount_and_currency()
+        self._clean_trailing_exchange_rate()
+        self._clean_trailing_date()
+        self._clean_trailing_amount_and_currency()
 
+    def _clean_leading_card_number(self):
         pattern = compile_regex(r'\*\d{4}')
 
         try:
-            if pattern.match(parts[0]):
-                del parts[0]
+            if pattern.match(self.parts[0]):
+                del self.parts[0]
         except IndexError:
-            return
+            pass
 
+    def _clean_leading_date(self):
         pattern = compile_regex(r'\d{2}\.\d{2}')
 
-        if pattern.match(parts[0]):
-            del parts[0]
+        try:
+            if pattern.match(self.parts[0]):
+                del self.parts[0]
+        except IndexError:
+            pass
 
-        currency: Any = iso4217parse.by_alpha3(parts[0])
+    def _clean_leading_amount_and_currency(self):
+        try:
+            currency: Any = iso4217parse.by_alpha3(self.parts[0])
+            if isinstance(currency, iso4217parse.Currency):
+                del self.parts[0]
+                del self.parts[0]
+        except IndexError:
+            pass
 
-        if isinstance(currency, iso4217parse.Currency):
-            del parts[0]
-            del parts[0]
-
+    def _clean_trailing_exchange_rate(self):
         pattern = compile_regex(r'\d{1}\.\d{4}')
 
-        if pattern.match(parts[-1]):
-            del parts[-1]
-            del parts[-1]
+        try:
+            if pattern.match(self.parts[-1]):
+                del self.parts[-1]
+                del self.parts[-1]
+        except IndexError:
+            pass
 
+    def _clean_trailing_date(self):
         pattern = compile_regex(r'\d{2}\.\d{2}\.\d{2}')
 
-        if pattern.match(parts[-1]):
-            del parts[-1]
+        try:
+            if pattern.match(self.parts[-1]):
+                del self.parts[-1]
 
-            pattern = compile_regex(r'.+:')
+                pattern = compile_regex(r'.+:')
 
-            if pattern.match(parts[-1]):
-                del parts[-1]
+                if pattern.match(self.parts[-1]):
+                    del self.parts[-1]
+        except IndexError:
+            pass
 
+    def _clean_trailing_amount_and_currency(self):
         pattern = compile_regex(r'\d+,\d{2}')
 
-        if pattern.match(parts[-1]):
-            del parts[-1]
+        try:
+            if pattern.match(self.parts[-1]):
+                del self.parts[-1]
 
-            currency: Any = iso4217parse.by_alpha3(parts[-1])
-            if isinstance(currency, iso4217parse.Currency):
-                del parts[-1]
-
-        text = ' '.join(parts)
-
-        self.text = text
+                currency: Any = iso4217parse.by_alpha3(self.parts[-1])
+                if isinstance(currency, iso4217parse.Currency):
+                    del self.parts[-1]
+        except IndexError:
+            pass
