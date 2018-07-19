@@ -18,7 +18,7 @@ class PaymentText:
     def clean(self) -> None:
         parts: List[str] = self.text.split()
 
-        pattern = compile_regex('\*\d{4}')
+        pattern = compile_regex(r'\*\d{4}')
 
         try:
             if pattern.match(parts[0]):
@@ -26,7 +26,7 @@ class PaymentText:
         except IndexError:
             return
 
-        pattern = compile_regex('\d{2}\.\d{2}')
+        pattern = compile_regex(r'\d{2}\.\d{2}')
 
         if pattern.match(parts[0]):
             del parts[0]
@@ -37,23 +37,23 @@ class PaymentText:
             del parts[0]
             del parts[0]
 
-        pattern = compile_regex('\d{1}\.\d{4}')
+        pattern = compile_regex(r'\d{1}\.\d{4}')
 
         if pattern.match(parts[-1]):
             del parts[-1]
             del parts[-1]
 
-        pattern = compile_regex('\d{2}\.\d{2}\.\d{2}')
+        pattern = compile_regex(r'\d{2}\.\d{2}\.\d{2}')
 
         if pattern.match(parts[-1]):
             del parts[-1]
 
-            pattern = compile_regex('.+:')
+            pattern = compile_regex(r'.+:')
 
             if pattern.match(parts[-1]):
                 del parts[-1]
 
-        pattern = compile_regex('\d+,\d{2}')
+        pattern = compile_regex(r'\d+,\d{2}')
 
         if pattern.match(parts[-1]):
             del parts[-1]
