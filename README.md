@@ -41,3 +41,9 @@ I've mostly had strings from transactions with Norwegian merchants and banks to 
 ## Running tests
 
 Run the command `nosetests`.
+
+## Upload new release to the Python Package Index
+
+1. Update version number in [setup.py](setup.py).
+2. Make new distribution: `python setup.py sdist bdist_wheel`
+3. Upload to PyPI: `twine upload dist/*`
