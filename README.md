@@ -3,6 +3,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/build.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/?branch=master)
+[![PyPI version](https://badge.fury.io/py/paytext.svg)](https://badge.fury.io/py/paytext)
 
 Python package to generalize texts from payments.
 
