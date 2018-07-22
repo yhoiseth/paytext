@@ -20,7 +20,10 @@ build:
           - pipenv install --dev
       tests:
         override:
-          - pipenv run nosetests --with-coverage --cover-package paytext --cover-min-percentage=100 --cover-erase
+          -
+            command: pipenv run nosetests --with-coverage --cover-package=paytext --cover-min-percentage=100
+            coverage:
+              file: '.coverage'
           - cp pyre-check.sh.dist pyre-check.sh && ./pyre-check.sh
 build_failure_conditions:
   - 'issues.exists'
