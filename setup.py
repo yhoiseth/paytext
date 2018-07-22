@@ -10,7 +10,7 @@ setuptools.setup(
     version='0.0.1',
     author='Yngve Høiseth',
     author_email='yngve@hoiseth.net',
-    description='Clean texts from payment card transactions',
+    description='Generalize texts from payment card transactions',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/yhoiseth/paytext',
