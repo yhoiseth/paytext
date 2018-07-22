@@ -1,10 +1,10 @@
 # paytext
 
-[![Build Status](https://travis-ci.org/yhoiseth/payment-card-text.svg?branch=master)](https://travis-ci.org/yhoiseth/payment-card-text)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cef3ee7d86c4402993b484e4de7867a5)](https://app.codacy.com/app/yhoiseth/payment-card-text?utm_source=github.com&utm_medium=referral&utm_content=yhoiseth/payment-card-text&utm_campaign=badger)
-[![codecov](https://codecov.io/gh/yhoiseth/payment-card-text/branch/master/graph/badge.svg)](https://codecov.io/gh/yhoiseth/payment-card-text)
+[![Build Status](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/build.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/?branch=master)
 
-Python package to clean texts from payment card transactions.
+Python package to generalize texts from payment card transactions.
 
 As an example, consider the following texts.
  - `*1234 01.07 NOK 215.00 ITUNES.COM/BILL Kurs: 1.0000`

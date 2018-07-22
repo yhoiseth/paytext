@@ -1,7 +1,14 @@
 # pyre-strict
-from typing import List, Dict
 
-TEXTS: List[Dict[str, str]] = [
+"""
+This is the main test file for the paytext module.
+"""
+
+import unittest
+from typing import List, Dict
+from paytext import PaymentText
+
+EXAMPLE_TEXTS: List[Dict[str, str]] = [
     {
         'input': '',
         'expected_output': '',
@@ -75,3 +82,28 @@ TEXTS: List[Dict[str, str]] = [
         'expected_output': 'ITUNES.COM/BILL',
     },
 ]
+
+
+class PaymentTextTest(unittest.TestCase):
+    """
+    This is the test class for the PaymentText class.
+    """
+    def test_generalize(self) -> None:
+        """
+        Test that PaymentText.generalize() properly cleans a payment text.
+
+        :return:
+        """
+        for example_text in EXAMPLE_TEXTS:
+            text = PaymentText(example_text['input'])
+
+            text.generalize()
+
+            self.assertEqual(
+                str(text),
+                example_text['expected_output'],
+            )
+
+
+if __name__ == '__main__':
+    unittest.main()
