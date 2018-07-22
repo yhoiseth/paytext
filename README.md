@@ -3,6 +3,7 @@
 [![Build Status](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/build.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/yhoiseth/paytext/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yhoiseth/paytext/?branch=master)
+[![PyPI version](https://badge.fury.io/py/paytext.svg)](https://badge.fury.io/py/paytext)
 
 Python package to generalize texts from payments.
 
@@ -40,3 +41,9 @@ I've mostly had strings from transactions with Norwegian merchants and banks to 
 ## Running tests
 
 Run the command `nosetests`.
+
+## Upload new release to the Python Package Index
+
+1. Update version number in [setup.py](setup.py).
+2. Make new distribution: `python setup.py sdist bdist_wheel`
+3. Upload to PyPI: `twine upload dist/*`
