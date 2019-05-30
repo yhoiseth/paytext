@@ -15,7 +15,7 @@ Now, when I put this payment in the _Travel_ category, I'd like all future payme
 
 ## Installation
 
-Use [Pipenv](https://docs.pipenv.org/): `pipenv install paytext`
+`pip install paytext`
 
 ## Usage
 
@@ -25,13 +25,9 @@ from paytext import PaymentText
 payment_text: PaymentText = PaymentText(
     '*4274 25.06 NOK 4101.00 WWW.TICKET.NO Kurs: 1.0000',
 )
-
-print(payment_text) # Output: '*4274 25.06 NOK 4101.00 WWW.TICKET.NO Kurs: 1.0000' 
-
+print(payment_text) # *4274 25.06 NOK 4101.00 WWW.TICKET.NO Kurs: 1.0000 
 payment_text.generalize()
-
-print(payment_text) # Output: 'WWW.TICKET.NO'
-
+print(payment_text) # WWW.TICKET.NO
 ```
 
 ## Known limitations
